@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import './css/main.css'
-import { Route, BrowserRouter as Router, Link, Redirect, Switch } from 'react-router-dom';
+import { Route, HashRouter as Router, Link, Redirect, Switch } from 'react-router-dom';
 
 import SideBar from './layouts/SideBar'
 import CityMeter from './layouts/CityMeter'
@@ -31,7 +31,7 @@ function App() {
                
                   <Visualize
                   myObj={value[value.current]}
-                  
+
                   />
                 </main>
 

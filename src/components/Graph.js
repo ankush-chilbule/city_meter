@@ -3,7 +3,7 @@ import {Bar} from 'react-chartjs-2'
 
 class graph extends Component{
 
-    
+
      myData = this.props.myObj.map((e)=>{
          let myList=[]
             myList.push(Object.keys(e).map((key)=>{
@@ -20,7 +20,7 @@ class graph extends Component{
         labels: ['Aundh-Baner','Kothrud-Bawdhan','Warje-Karvenagar','Tilak Road	'],
         datasets: [
           {
-            label: 'My First dataset',
+            label: 'Dataset',
             backgroundColor: 'rgba(255,99,132,0.2)',
             borderColor: 'rgba(255,99,132,1)',
             borderWidth: 1,
@@ -41,9 +41,7 @@ class graph extends Component{
             maintainAspectRatio: false
           }}
         />
-        {
-            JSON.stringify(this.myData)
-        }
+      
         </div>
         )
     }

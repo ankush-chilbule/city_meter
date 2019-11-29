@@ -9,7 +9,7 @@ export default({myObj})=>{
                 Average Table
             </h3>
             <p>
-                Lorem Ipsum Dolor Emit Sit
+                
             </p>
         <table border="1|0">
             <tr>
