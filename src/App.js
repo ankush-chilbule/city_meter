@@ -31,6 +31,7 @@ function App() {
                
                   <Visualize
                   myObj={value[value.current]}
+                  
                   />
                 </main>
 
