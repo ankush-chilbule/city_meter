@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/city-meter/static/css/main.0638d77e.chunk.css",
+    "main.js": "/city-meter/static/js/main.e1d0d119.chunk.js",
+    "main.js.map": "/city-meter/static/js/main.e1d0d119.chunk.js.map",
+    "runtime-main.js": "/city-meter/static/js/runtime-main.430e4af9.js",
+    "runtime-main.js.map": "/city-meter/static/js/runtime-main.430e4af9.js.map",
+    "static/js/2.40a051f1.chunk.js": "/city-meter/static/js/2.40a051f1.chunk.js",
+    "static/js/2.40a051f1.chunk.js.map": "/city-meter/static/js/2.40a051f1.chunk.js.map",
+    "index.html": "/city-meter/index.html",
+    "precache-manifest.c911f883787f5f63ddc380c41db5709c.js": "/city-meter/precache-manifest.c911f883787f5f63ddc380c41db5709c.js",
+    "service-worker.js": "/city-meter/service-worker.js",
+    "static/css/main.0638d77e.chunk.css.map": "/city-meter/static/css/main.0638d77e.chunk.css.map",
+    "static/media/logo.svg": "/city-meter/static/media/logo.25bf045c.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.430e4af9.js",
+    "static/js/2.40a051f1.chunk.js",
+    "static/css/main.0638d77e.chunk.css",
+    "static/js/main.e1d0d119.chunk.js"
+  ]
+}
