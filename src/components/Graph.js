@@ -3,6 +3,7 @@ import {Bar} from 'react-chartjs-2'
 
 class graph extends Component{
 
+    
      myData = this.props.myObj.map((e)=>{
          let myList=[]
             myList.push(Object.keys(e).map((key)=>{
