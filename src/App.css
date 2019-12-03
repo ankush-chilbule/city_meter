@@ -20,4 +20,11 @@ p{
     top: 0;
     width: 100%;
   }
+  .mySlider{
+      transform: translateY(-50px);
+      padding:0rem 1rem;
+  }
+  .rc-slider-track{
+    background-color: red !important;
+}
   

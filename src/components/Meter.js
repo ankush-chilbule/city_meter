@@ -1,6 +1,10 @@
 import React,{useContext} from 'react'
 import ReactSpeedometer from "react-d3-speedometer"
 import Context from '../config/context'
+import Slider, { Range } from 'rc-slider';
+
+import 'rc-slider/assets/index.css';
+  
 export default ({data,label,mkey})=>{
 
     const {clickHandler} = useContext(Context)
@@ -20,6 +24,9 @@ export default ({data,label,mkey})=>{
                     needleColor={"#242325"}
                     needleHeightRatio={0.8}
             />
+            <div className="mySlider">
+            <Slider min={0} max={20} defaultValue={3}  />
+            </div>
             <input type="hidden" value={mkey} onClick={clickHandler}/>
         </div>
     )
