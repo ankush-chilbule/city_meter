@@ -1,14 +1,19 @@
 import React,{Component} from 'react'
-
+import ReactDOM from 'react-dom' 
 import csvToJson from 'convert-csv-to-json'
 import csv from 'csvtojson'
 const Context = React.createContext()
 
 export class Provider extends Component{
    
+    constructor(props){
+        super(props)
+
+        this.mainRef = React.createRef()
+    }
     state={
         name:"Rahul",
-        current:'hospital',
+        current:'swm',
         aqi:[{"Wards":"Aundh-Baner","AQI":0.042248,"status":"unhealthy for sensitive groups"},{"Wards":"Kothrud-Bawdhan","AQI":0.042820278,"status":"unhealthy for sensitive groups"},{"Wards":"Tilak Road","AQI":0.04064,"status":"unhealthy for sensitive groups"},{"Wards":"Warje-Karvenagar","AQI":0.044217323,"status":"unhealthy for sensitive groups"}],
         complaint:[{"Wards":"Aundh-Baner","2017":3450,"2018":4857,"Percent increase":17.350884,"Index":1.7350884},{"Wards":"Ghole Road","2017":2139,"2018":3401,"Percent increase":22.533062,"Index":2.2533062},{"Wards":"Kothrud-Bawdhan","2017":2057,"2018":2322,"Percent increase":7.315185,"Index":0.7315185},{"Wards":"Warje-Karvenagar","2017":1372,"2018":3046,"Percent increase":34.400483,"Index":3.4400483}],
         swm:[{"Wards":"Aundh-Baner","door_to_door_collection_percentage":2.992,"gate_to_gate_collection_percentage":2.992,"total_waste_collected_in_tons":86.4,"total_waste_generated_in_tons":100.8,"Positive\/Negative Index":-14.28571429,"Normalized":7.320020299},{"Wards":"Kothrud-Bawdhan","door_to_door_collection_percentage":435.0,"gate_to_gate_collection_percentage":435.0,"total_waste_collected_in_tons":74.5,"total_waste_generated_in_tons":100.0,"Positive\/Negative Index":-25.5,"Normalized":4.821776721},{"Wards":"Tilak Road","door_to_door_collection_percentage":143.0,"gate_to_gate_collection_percentage":178.0,"total_waste_collected_in_tons":71.61,"total_waste_generated_in_tons":84.253,"Positive\/Negative Index":-15.00599385,"Normalized":7.159561234},{"Wards":"Warje-Karvenagar","door_to_door_collection_percentage":16607.37,"gate_to_gate_collection_percentage":2286.9205,"total_waste_collected_in_tons":67.6,"total_waste_generated_in_tons":94.67,"Positive\/Negative Index":-28.59406359,"Normalized":4.132501926}],
@@ -21,19 +26,14 @@ export class Provider extends Component{
         swm:[{'total_waste_collected_in_tons':[86.4,74.5,71.61,67.6]},{'total_waste_generated_in_tons':[100.8,100,84.2,94.6]}],
         complaint:[{'2017':[3450,2139,2057,1372]},{'2018':[4857,3401,2322,3046]}],
         hospital:[{'Number of Beds in facility type':[1146,2709,1518,1312]},{'No_Required_bed':[60372,144537,69776,77795]}],
-        aqi:[{},{}]
+        aqi:[{},{}],
+        mainRef:this.mainRef
         }
 
     }
 
-    componentDidMount(){
-        // console.log(csvToJson.getJsonFromCsv('./data/City-positive-data.csv'))
-     
-        fetch('./data/Aqi-data.json')
-        .then((res)=>{
-            console.log(res.json())
-        })
-    }
+   
+
     clickHandler=(e)=>{
        console.log(e.currentTarget.lastChild.value)
        this.setState({current:e.currentTarget.lastChild.value})

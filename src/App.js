@@ -22,7 +22,7 @@ function App() {
             return(
              <div className="app">
                 <SideBar />
-                <main>
+                <main ref={value.mainRef}>
               
                   <Switch>
                     <Route exact path="/" component={CityMeter} />

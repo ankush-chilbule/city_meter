@@ -17,11 +17,11 @@ export default ()=>{
                 <div className="positive_meter">
                 <Meter
             data={5.8}
-            label={"Solid Waste Management"}
+            label={"Waste Management"}
             mkey={"swm"}
             /><Meter
             data={4.4}
-            label={"Tree Census"}
+            label={"Tree Census "}
             mkey={"tree"}
             /><Meter
             data={0.19}

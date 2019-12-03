@@ -1,9 +1,10 @@
 import React,{Component} from 'react'
-import {Bar} from 'react-chartjs-2'
+import {Bar,Line} from 'react-chartjs-2'
 
 class graph extends Component{
 
 
+  colors=["#FF5964","#51A3A3","#8FB339","#F34213","#E0CA3C","#6B717E"]
      myData = this.props.myObj.map((e)=>{
          let myList=[]
             myList.push(Object.keys(e).map((key)=>{
@@ -16,32 +17,49 @@ class graph extends Component{
             
             return myList;
     })
-     data = {
-        labels: ['Aundh-Baner','Kothrud-Bawdhan','Warje-Karvenagar','Tilak Road	'],
-        datasets: [
-          {
-            label: 'Dataset',
-            backgroundColor: 'rgba(255,99,132,0.2)',
-            borderColor: 'rgba(255,99,132,1)',
-            borderWidth: 1,
-            hoverBackgroundColor: 'rgba(255,99,132,0.4)',
-            hoverBorderColor: 'rgba(255,99,132,1)',
-            data: [65, 59, 80, 81]
-          }
-        ]
-      };
+  
+    constructor(props){
+        super(props)
+        this.myList1 = []
+        this.props.myObj.forEach((obj)=>{
+            Object.keys(obj).forEach((key)=>{
+                this.myList1.push({
+                    'label':key,
+                    'data':obj[key]
+                })
+            })
+        })
+
+
+    }
+
+     
     render(){
+      const myList2 = []
+        this.props.myObj.forEach((obj)=>{
+        Object.keys(obj).forEach((key)=>{
+            myList2.push({
+                'label':key,
+                'data':obj[key]
+            })
+        })
+      })
         return(
             <div>
-            <Bar
-          data={this.data}
+            <Line
+          data={{
+            labels: ['Aundh-Baner','Kothrud-Bawdhan','Warje-Karvenagar','Tilak Road	'],
+            datasets: myList2
+          }}
           width={200}
           height={200}
           options={{
             maintainAspectRatio: false
           }}
         />
-      
+          {
+            JSON.stringify(myList2)
+          }
         </div>
         )
     }

@@ -1,0 +1,23 @@
+*{
+    font-family: 'Open Sans', sans-serif;
+
+}
+
+h1,h2,h3,h4,h5{
+    font-family: 'Montserrat', sans-serif;
+    color: #3D3D3D;
+}
+p{
+    font-size: 14px;
+    padding: 1rem;
+}
+.secondary_text{
+    color:silver
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  

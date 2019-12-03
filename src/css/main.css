@@ -9,7 +9,9 @@
 
 
 }
-
+.meter h3{
+    /* color:white; */
+}
 nav{
     flex:1.6;
     background-color: #3D3D3D;
@@ -20,6 +22,7 @@ nav{
     flex:8.4;
     overflow-y: scroll;
     flex-direction: column;
+    /* background-color: #282c34; */
 }
 
 li{
@@ -50,7 +53,7 @@ nav li:hover{
 
 .city_meter,.ward_meter{
     display: flex;
-    flex:6;
+    flex:4;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
@@ -59,14 +62,15 @@ nav li:hover{
 }
 
 .visualize{
-    flex:4;
+    flex:6;
     height: 100vh;
     background-color: #f1f1f1;
 }
 
 .city_meter section{
     flex:5;
-    width: 100%;
+  
+
 }
 
 .sub_meters{
@@ -78,10 +82,13 @@ nav li:hover{
     
 }
 .positive_meter{
-background-color: rgba(0, 250, 154, 0.1)
+background-color: rgba(0, 250, 154, 0.1);
+height: 100%;
 }
 .negative_meter{
  background-color: rgba(255, 160, 122, 0.1);
+ /* background-color: red; */
+ height: 100%;
 }
 
 .sub_meters > div{
@@ -92,29 +99,37 @@ background-color: rgba(0, 250, 154, 0.1)
     
 }
 .speedometer{
-    padding: 1rem;
+    padding: 0rem 1rem;
 }
-
-table{
-    border:solid 1px;
-    table-layout: fixed;
-    max-width: 100%;
+.meter{
+    padding-top: .5rem;
+  
+}
+table { border-collapse: collapse; }
+tr { border: none; }
+th{
+    border-bottom: solid 1px black;
 }
 td,th{
-  
+    padding:.5rem;
+  border-right: solid 1px black; 
+  border-left: solid 1px black;
 }
 
 .toggle button{
     padding:1rem 2rem;
     background-color: none;
     border:none;
+    cursor:pointer;
 }
 .toggle{
     width: 100%;
     background-color: #f1f1f1;
+ 
 }
 .active{
-    background-color: #f1f1f1;
+    background-color: #3D3D3D;
+    color:white;
     font-weight: bold;
 }
 
