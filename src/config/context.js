@@ -2,6 +2,7 @@ import React,{Component} from 'react'
 import ReactDOM from 'react-dom' 
 import csvToJson from 'convert-csv-to-json'
 import csv from 'csvtojson'
+
 const Context = React.createContext()
 
 export class Provider extends Component{
@@ -13,6 +14,15 @@ export class Provider extends Component{
     }
     state={
         name:"Rahul",
+        
+        meter:{
+            main:0,
+            aqi:2,
+            swm:5.8,
+            complaint:2,
+            tree:4.4,
+            hospital:0.19
+        },
         current:'swm',
         aqi:[{"Wards":"Aundh-Baner","AQI":0.042248,"status":"unhealthy for sensitive groups"},{"Wards":"Kothrud-Bawdhan","AQI":0.042820278,"status":"unhealthy for sensitive groups"},{"Wards":"Tilak Road","AQI":0.04064,"status":"unhealthy for sensitive groups"},{"Wards":"Warje-Karvenagar","AQI":0.044217323,"status":"unhealthy for sensitive groups"}],
         complaint:[{"Wards":"Aundh-Baner","2017":3450,"2018":4857,"Percent increase":17.350884,"Index":1.7350884},{"Wards":"Ghole Road","2017":2139,"2018":3401,"Percent increase":22.533062,"Index":2.2533062},{"Wards":"Kothrud-Bawdhan","2017":2057,"2018":2322,"Percent increase":7.315185,"Index":0.7315185},{"Wards":"Warje-Karvenagar","2017":1372,"2018":3046,"Percent increase":34.400483,"Index":3.4400483}],
@@ -32,6 +42,22 @@ export class Provider extends Component{
 
     }
 
+    componentDidMount=()=>{
+        this.calculateMain()
+    }
+    calculateMain=()=>{
+        const {meter}=this.state
+        const {swm,tree,hospital,aqi,complaint} = this.state.meter
+        let temp = (swm+tree+hospital)/3-(aqi+complaint-6)/3
+        if(temp<0){
+            temp=0
+        }
+        else if(temp>10){
+            temp=10
+        }
+        meter.main = temp
+        this.setState({meter:meter})
+    }
    
 
     clickHandler=(e)=>{
@@ -39,6 +65,26 @@ export class Provider extends Component{
        this.setState({current:e.currentTarget.lastChild.value})
     }
 
+    seekbarChangeHandler=(value,mkey)=>{
+        console.log("value :"+value+" mkey"+mkey)
+        const {meter} = this.state
+        meter[mkey]=value
+        this.setState({meter})
+        this.calculateMain();
+    }
+    resetHandler=()=>{
+       const defaultMeter={
+            main:0,
+            aqi:2,
+            swm:5.8,
+            complaint:2,
+            tree:4.4,
+            hospital:0.19
+        }
+        const {swm,tree,hospital,aqi,complaint} = defaultMeter
+        defaultMeter.main = (swm+tree+hospital)/3-(aqi+complaint-6)/3
+        this.setState({meter:defaultMeter})
+    }
     toggleGraph=()=>{
         this.setState({isGraph:true})
     }
@@ -51,7 +97,9 @@ export class Provider extends Component{
                 ...this.state,
                 clickHandler:this.clickHandler,
                 toggleGraph:this.toggleGraph,
-                toggleTable:this.toggleTable
+                toggleTable:this.toggleTable,
+                seekbarChangeHandler:this.seekbarChangeHandler,
+                resetHandler:this.resetHandler
             }}>
             {this.props.children}
             </Context.Provider>

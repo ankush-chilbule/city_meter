@@ -7,6 +7,7 @@ import { Route, HashRouter as Router, Link, Redirect, Switch } from 'react-route
 import SideBar from './layouts/SideBar'
 import CityMeter from './layouts/CityMeter'
 import WardMeter from './layouts/WardMeter'
+import WealthMeter from './layouts/WealthMeter'
 import Visualize from './containers/Visualise'
 import Context,{Provider} from './config/context'
 
@@ -21,12 +22,14 @@ function App() {
           value=>{
             return(
              <div className="app">
+                
                 <SideBar />
                 <main ref={value.mainRef}>
               
                   <Switch>
                     <Route exact path="/" component={CityMeter} />
                     <Route exact path="/ward" component={WardMeter} />
+                    <Route exact path="/wealth" component={WealthMeter} />
                   </Switch>
                
                   <Visualize

@@ -14,7 +14,7 @@ export default ({data,label,mkey})=>{
                 {label}
             </h3>
             <ReactSpeedometer
-                    width={200}
+                    width={250}
                     height={200}
                     minValue={0}
                     maxValue={10}
@@ -24,9 +24,7 @@ export default ({data,label,mkey})=>{
                     needleColor={"#242325"}
                     needleHeightRatio={0.8}
             />
-            <div className="mySlider">
-            <Slider min={0} max={20} defaultValue={3}  />
-            </div>
+            
             <input type="hidden" value={mkey} onClick={clickHandler}/>
         </div>
     )

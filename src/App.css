@@ -1,13 +1,16 @@
+
 *{
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'DejaVu', sans-serif;
 
 }
 
 h1,h2,h3,h4,h5{
-    font-family: 'Montserrat', sans-serif;
-    color: #3D3D3D;
+    font-family: 'DejaVu', sans-serif;
+    color: black;
+    font-size: 16px !important;
+    font-weight: 700;
 }
-p{
+.tables p{
     font-size: 14px;
     padding: 1rem;
 }
@@ -25,6 +28,7 @@ p{
       padding:0rem 1rem;
   }
   .rc-slider-track{
-    background-color: red !important;
+    background-color: linear-gradient(to left,#e66465, #9198e5) !important;
 }
+
   
