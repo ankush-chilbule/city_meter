@@ -5,9 +5,9 @@ import Context from '../config/context'
 import Slider, { Range } from 'rc-slider';
 
 import 'rc-slider/assets/index.css';
-export default ({data,label,mkey})=>{
+export default ({data,label,mkey,sliderMin,sliderMax,hint})=>{
 
-    const {clickHandler,meter,seekbarChangeHandler} = useContext(Context)
+    const {clickHandler,meter,seekbarChangeHandler,slider} = useContext(Context)
     const curr = meter[mkey]
     return(
         <div className="meter" onClick={clickHandler} data-key={mkey}>
@@ -21,15 +21,17 @@ export default ({data,label,mkey})=>{
                     maxValue={10}
                     customSegmentStops={[0, 3, 7,  10]}
                     segmentColors={["#1d9421", "gold", "#DF2727"]}
-                    value={data}
+                    value={Math.round(data)}
                     needleColor={"#242325"}
                     needleHeightRatio={0.8}
             />
-             <div className="mySlider">
-             <Slider min={0} max={10}  value={meter[mkey]} marks={{ 0: 0, 10: 10 }} onChange={value=>seekbarChangeHandler(value,mkey)}/>
-             <article>
-                <p>Current Value {meter[mkey]}</p>
-            <p>Require Value 123</p>
+               <div className="mySlider">
+                 
+                <Slider min={sliderMin} max={sliderMax}  value={slider[mkey]}  onChange={value=>seekbarChangeHandler(value,mkey)}/>
+                <article>
+                <h5>{hint}</h5>
+                <p>Current Value {slider[mkey]}</p>
+                <p>Require Value 0</p>
                 </article>
             </div>
             <input type="hidden" value={mkey} onClick={clickHandler}/>

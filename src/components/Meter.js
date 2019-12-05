@@ -20,7 +20,7 @@ export default ({data,label,mkey})=>{
                     maxValue={10}
                     customSegmentStops={[0, 3, 7,  10]}
                     segmentColors={["#DF2727", "gold", "#1d9421"]}
-                    value={data}
+                    value={Math.round(data)}
                     needleColor={"#242325"}
                     needleHeightRatio={0.8}
             />

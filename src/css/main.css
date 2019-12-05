@@ -14,7 +14,7 @@
     /* color:white; */
 }
 nav{
-    flex:1.6;
+    flex:1.4;
     background-color: #3D3D3D;
     
 }
@@ -22,7 +22,7 @@ nav ul{
     padding-top: 4rem;
 }
 .app main{
-    flex:8.4;
+    flex:8.6;
     overflow-y: scroll;
     flex-direction: column;
     /* background-color: #282c34; */
@@ -78,18 +78,18 @@ nav li:hover{
 
 .sub_meters,.sub_meter{
     display: flex;
-   
+    margin-left: 25px;
     
     justify-content:center;
     align-items: center;
     
 }
 .positive_meter{
-background-color: rgba(0, 250, 154, 0.1);
+background-color: rgba(147, 250, 12, 0.2);
 height: 100%;
 }
 .negative_meter{
- background-color: rgba(255, 160, 122, 0.1);
+ background-color: rgba(255, 160, 122, 0.4);
  /* background-color: red; */
  height: 100%;
 }
@@ -197,4 +197,28 @@ height: 100%;
 
 .mySlider article *{
     padding:4px 8px;
+}
+
+.graph_details{
+    display: flex;
+    width: 100%;
+    padding: 1rem 2rem;
+    justify-content: center;
+    
+
+}
+.graph_details > div{
+    flex:5;
+    padding:1rem;
+}
+
+.graph_wrapper > section{
+    padding: 1rem;
+}
+
+.reset{
+    padding:8px 16px;
+    background-color: lightgray;
+    border:none;
+    text-transform: capitalize;
 }

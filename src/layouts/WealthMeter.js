@@ -12,7 +12,7 @@ export default ()=>{
             />
              <section className="main">
             <Meter
-            data={4.4}
+            data={2.6}
             label={"City Wealth Meter"}
             mkey={"nObj"}
             />
@@ -42,19 +42,19 @@ export default ()=>{
             </section>
             <section className="sub_meter">
             <Meter
-            data={2}
-            label={"City Meter"}
-            mkey={"nObj"}
+            data={4.08}
+            label={"Property Tax"}
+            mkey={"property_tax"}
             />
             <Meter
-            data={3}
-            label={"City Meter"}
-            mkey={"nObj"}
+            data={3.60}
+            label={"Slum Population"}
+            mkey={"slum_population"}
             />
             <Meter
-            data={4}
-            label={"City Meter"}
-            mkey={"nObj"}
+            data={0.28}
+            label={"Slum Area"}
+            mkey={"slum_area"}
             />
             </section>
         </div>

@@ -2,6 +2,7 @@ import React,{Component,useContext} from 'react'
 import ReactDOM from 'react-dom'
 import Table from '../components/Table'
 import Graph from '../components/Graph'
+import Graph1 from '../components/Graph1'
 import Context from '../config/context'
 import { objectTypeAnnotation } from '@babel/types';
 
@@ -60,7 +61,7 @@ class visualize extends Component{
                     </div>
                     <div className="wrapper">
               {
-                  isGraph?<Graph
+                  isGraph?<Graph1
                   myObj={currGraph}
                   />:<Table myObj={this.props.myObj}/>
               }

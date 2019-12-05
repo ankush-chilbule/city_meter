@@ -18,7 +18,7 @@ export default ()=>{
             <Meter
             data={meter["main"]}
             label={"City Health Meter"}
-            mkey={"nObj"}
+            mkey={"swm"}
            
             />
              <div className="legend">
@@ -40,7 +40,7 @@ export default ()=>{
 
             </div>
             <div className="mySlider">
-                <button onClick={resetHandler}>
+                <button className="reset" onClick={resetHandler}>
                     reset
                  </button>   
             </div>
@@ -52,19 +52,22 @@ export default ()=>{
             label={"Waste Management"}
             mkey={"swm"}
             sliderMin={0}
-            sliderMax={380}
+            sliderMax={80}
+            hint={"Change Collected Garbage"}
             /><PMeter
             data={meter["tree"]}
             label={"Tree Census "}
             mkey={"tree"}
             sliderMin={0}
             sliderMax={453072}
+            hint={"Change Number Of Trees"}
             /><PMeter
             data={meter["hospital"]}
             label={"Hospital"}
             mkey={"hospital"}
             sliderMin={0}
             sliderMax={570480}
+            hint={"Change Beds In Hospital"}
             />
 
                 </div>
@@ -73,14 +76,16 @@ export default ()=>{
             data={meter["aqi"]}
             label={"Air Quality Index"}
             mkey={"aqi"}
-            sliderMin={0}
-            sliderMax={311}
+            sliderMin={-106}
+            sliderMax={400}
+            hint={"Change Air Quality"}
             /><NMeter
             data={meter["complaint"]}
             label={"Complaints"}
             mkey={"complaint"}
-            sliderMin={0}
-            sliderMax={311}
+            sliderMin={-4693}
+            sliderMax={3353}
+            hint={"Change Number Of Complaints"}
             
             />
                 </div>

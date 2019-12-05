@@ -5,9 +5,9 @@ import Slider, { Range } from 'rc-slider';
 
 import 'rc-slider/assets/index.css';
   
-export default ({data,label,mkey,sliderMin,sliderMax})=>{
+export default ({data,label,mkey,sliderMin,sliderMax,hint})=>{
 
-    const {clickHandler,meter,seekbarChangeHandler} = useContext(Context)
+    const {clickHandler,meter,seekbarChangeHandler,slider} = useContext(Context)
     const myMarks = {
         sliderMin,
         sliderMax
@@ -24,14 +24,15 @@ export default ({data,label,mkey,sliderMin,sliderMax})=>{
                     maxValue={10}
                     customSegmentStops={[0, 3, 7,  10]}
                     segmentColors={["#DF2727", "gold", "#1d9421"]}
-                    value={data}
+                    value={Math.round(data)}
                     needleColor={"#242325"}
                     needleHeightRatio={0.8}
             />
             <div className="mySlider">
-            <Slider min={sliderMin} max={sliderMax}  value={meter[mkey]}  onChange={value=>seekbarChangeHandler(value,mkey)}/>
+            <Slider min={sliderMin} max={sliderMax}  value={slider[mkey]}  onChange={value=>seekbarChangeHandler(value,mkey)}/>
                 <article>
-                <p>Current Value {meter[mkey]}</p>
+                <h5>{hint}</h5>
+                <p>Current Value {slider[mkey]}</p>
                 <p>Require Value {sliderMax}</p>
                 </article>
             </div>

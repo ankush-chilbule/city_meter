@@ -1,19 +1,23 @@
 import React,{useContext} from 'react'
-
+import Context from '../config/context'
 export default({myObj})=>{
 
+    const {rd,current} = useContext(Context)
+    const {meter} = rd
+    const {data,Name,Description} = meter[current]
     
     return(
         // <div className="tables">
     
         // </div>
         <div className="tables">
+           
             <header>
                 <h2>
-                    Solid Waste Management
+                   {Name}
                 </h2>
                 <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt. Scelerisque eu ultrices vitae auctor eu augue ut. 
+               {Description}
                 </p>
             </header>
            <section>
