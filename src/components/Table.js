@@ -4,7 +4,7 @@ export default({myObj})=>{
 
     const {rd,current} = useContext(Context)
     const {meter} = rd
-    const {data,Name,Description} = meter[current]
+    const {data,name,description} = meter[current]
     
     return(
         // <div className="tables">
@@ -14,10 +14,10 @@ export default({myObj})=>{
            
             <header>
                 <h2>
-                   {Name}
+                   {name}
                 </h2>
                 <p>
-               {Description}
+               {description}
                 </p>
             </header>
            <section>

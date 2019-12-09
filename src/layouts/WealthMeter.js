@@ -8,7 +8,7 @@ export default ()=>{
         <div className="wealth_meter">
             <TitleBar 
             title={"City Wealth Meter"}
-            tagLine={"Key Performance Indicator Of The Wealth Your City"}
+            tagLine={"Key Performance Indicator Of The Wealth Of Your City"}
             />
              <section className="main">
             <Meter

@@ -4,6 +4,8 @@ import ReactSpeedometer from "react-d3-speedometer"
 import Meter from '../components/Meter'
 import NMeter from '../components/NMeter'
 import PMeter from '../components/PMeter'
+import TreeMeter from '../components/TreeMeter'
+import SWMMeter from '../components/SWMMeter'
 import Context from '../config/context'
 import TitleBar from '../containers/TitleBar'
 export default ()=>{
@@ -12,12 +14,13 @@ export default ()=>{
         <div className="city_meter">
             <TitleBar 
             title={"City Health Meter"}
-            tagLine={"Key Performance Indicator Of The Health Your City"}
+            tagLine={"Key Performance Indicator Of The Health Of Your City"}
             />
             <section className="main">
             <Meter
             data={meter["main"]}
             label={"City Health Meter"}
+            
             mkey={"swm"}
            
             />
@@ -47,19 +50,19 @@ export default ()=>{
             </section>
             <section className="sub_meters">
                 <div className="positive_meter">
-                <PMeter
+                <SWMMeter
             data={meter["swm"]}
             label={"Waste Management"}
             mkey={"swm"}
             sliderMin={0}
             sliderMax={80}
             hint={"Change Collected Garbage"}
-            /><PMeter
+            /><TreeMeter
             data={meter["tree"]}
             label={"Tree Census "}
             mkey={"tree"}
             sliderMin={0}
-            sliderMax={453072}
+            sliderMax={212585}
             hint={"Change Number Of Trees"}
             /><PMeter
             data={meter["hospital"]}
@@ -76,15 +79,15 @@ export default ()=>{
             data={meter["aqi"]}
             label={"Air Quality Index"}
             mkey={"aqi"}
-            sliderMin={-106}
-            sliderMax={400}
+            sliderMin={0}
+            sliderMax={500}
             hint={"Change Air Quality"}
             /><NMeter
             data={meter["complaint"]}
             label={"Complaints"}
             mkey={"complaint"}
-            sliderMin={-4693}
-            sliderMax={3353}
+            sliderMin={0}
+            sliderMax={20000}
             hint={"Change Number Of Complaints"}
             
             />

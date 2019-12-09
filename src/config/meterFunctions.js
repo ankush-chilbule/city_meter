@@ -65,147 +65,163 @@
 
     
             export const tree_function = (x)=>{
-                if(x==0){
-                    return 4.4
-                }
+                // if(x==0){
+                //     return 4.4
+                // }
                 const trees = [
-                    {
-                        "Ratio": 209.80322872728075,
-                        "Total Population": 181124,
-                        "Required Trees": 90562.0,
-                        "Wards": "Aundh-Baner",
-                        "Normalized Values": 4.3121762275883295,
-                        "Tree Count": 280564
-                    },
-                    {
-                        "Ratio": -94.8883544461261,
-                        "Total Population": 192932,
-                        "Required Trees": 96466.0,
-                        "Wards": "Bhavani Peth",
-                        "Normalized Values": 0.0,
-                        "Tree Count": 4931
-                    },
-                    {
-                        "Ratio": -57.012276716784584,
-                        "Total Population": 291446,
-                        "Required Trees": 145723.0,
-                        "Wards": "Bibewadi",
-                        "Normalized Values": 0.5360447449111203,
-                        "Tree Count": 62643
-                    },
-                    {
-                        "Ratio": 128.99749839423956,
-                        "Total Population": 236648,
-                        "Required Trees": 118324.0,
-                        "Wards": "Dhankawadi",
-                        "Normalized Values": 3.168565545055155,
-                        "Tree Count": 270959
-                    },
-                    {
-                        "Ratio": 62.553969101683904,
-                        "Total Population": 155413,
-                        "Required Trees": 77706.5,
-                        "Wards": "Dhole Patil Road",
-                        "Normalized Values": 2.2282172607070296,
-                        "Tree Count": 126315
-                    },
-                    {
-                        "Ratio": -85.98498737417414,
-                        "Total Population": 433635,
-                        "Required Trees": 216817.5,
-                        "Wards": "Ghole Road",
-                        "Normalized Values": 0.1260057381083406,
-                        "Tree Count": 30387
-                    },
-                    {
-                        "Ratio": 27.72247044658831,
-                        "Total Population": 324751,
-                        "Required Trees": 162375.5,
-                        "Wards": "Hadapsar",
-                        "Normalized Values": 1.735261206892126,
-                        "Tree Count": 207390
-                    },
-                    {
-                        "Ratio": -92.93269984984649,
-                        "Total Population": 178484,
-                        "Required Trees": 89242.0,
-                        "Wards": "Kasba Peth",
-                        "Normalized Values": 0.02767758522115571,
-                        "Tree Count": 6307
-                    },
-                    {
-                        "Ratio": 77.0067500752397,
-                        "Total Population": 209331,
-                        "Required Trees": 104665.5,
-                        "Wards": "Kothrud-Bawdhan",
-                        "Normalized Values": 2.432761599896205,
-                        "Tree Count": 185265
-                    },
-                    {
-                        "Ratio": 8.502197711265035,
-                        "Total Population": 205441,
-                        "Required Trees": 102720.5,
-                        "Wards": "Sahakar Nagar",
-                        "Normalized Values": 1.4632444930931905,
-                        "Tree Count": 111454
-                    },
-                    {
-                        "Ratio": 611.6959016055141,
-                        "Total Population": 242290,
-                        "Required Trees": 121145.0,
-                        "Wards": "Tilak Road",
-                        "Normalized Values": 10.0,
-                        "Tree Count": 862184
-                    },
-                    {
-                        "Ratio": -13.040758529385302,
-                        "Total Population": 233399,
-                        "Required Trees": 116699.5,
-                        "Wards": "Warje-Karvenagar",
-                        "Normalized Values": 1.1583557829904298,
-                        "Tree Count": 101481
-                    },
-                    {
-                        "Ratio": 59.29688934898398,
-                        "Total Population": 239564,
-                        "Required Trees": 119782.0,
-                        "Wards": "Yerwada",
-                        "Normalized Values": 2.1821211338148125,
-                        "Tree Count": 190809
-                    }
-                ]
-           
-                const tree_count_list = []
-                trees.forEach((t)=>{
-                    tree_count_list.push(t["Tree Count"])
-                })
-            
-                const min_tree = Math.min(...tree_count_list)
-                const new_trees_without_min=trees.filter((e)=> e["Tree Count"]!=min_tree)
-                const new_trees_withonly_min=trees.filter((e)=> e["Tree Count"]==min_tree)
-            
-                 new_trees_withonly_min[0]["Tree Count"] =min_tree + x
-                new_trees_without_min.push(new_trees_withonly_min[0])
-            
-                new_trees_without_min.forEach((e)=>{
-                    e['Index'] = (e["Tree Count"]-e["Required Trees"])*100/e["Required Trees"]
-                })
-            
-                const index_list = []
-                    new_trees_without_min.forEach((e)=>{
-                    index_list.push(e['Index'])
-                })
-            
-                const min_index = Math.min(...index_list)
-                const max = Math.max(...index_list)
-            
-                const sum_index = index_list.reduce((a,b)=>a+b)
-                const mean_index = sum_index / index_list.length
-                let temp =  mean_index/10
-                if(temp>10)
-                temp=10
+    // {
+    //     "Ratio": 209.80322872728075,
+    //     "Total Population": 181124,
+    //     "Required Trees": 90562.0,
+    //     "Wards": "Aundh-Baner",
+    //     "Normalized Values": 4.3121762275883295,
+    //     "Tree Count": 280564
+    // },
+    {
+        "Ratio": -94.8883544461261,
+        "Total Population": 192932,
+        "Required Trees": 96466.0,
+        "Wards": "Aundh-Baner",
+        "Normalized Values": 0.0,
+        "Tree Count": 4931
+    },
+    // {
+    //     "Ratio": -57.012276716784584,
+    //     "Total Population": 291446,
+    //     "Required Trees": 145723.0,
+    //     "Wards": "Bibewadi",
+    //     "Normalized Values": 0.5360447449111203,
+    //     "Tree Count": 62643
+    // },
+    // {
+    //     "Ratio": 128.99749839423956,
+    //     "Total Population": 236648,
+    //     "Required Trees": 118324.0,
+    //     "Wards": "Dhankawadi",
+    //     "Normalized Values": 3.168565545055155,
+    //     "Tree Count": 270959
+    // },
+    // {
+    //     "Ratio": 62.553969101683904,
+    //     "Total Population": 155413,
+    //     "Required Trees": 77706.5,
+    //     "Wards": "Dhole Patil Road",
+    //     "Normalized Values": 2.2282172607070296,
+    //     "Tree Count": 126315
+    // },
+    {
+        "Ratio": -85.98498737417414,
+        "Total Population": 433635,
+        "Required Trees": 216817.5,
+        "Wards": "Ghole Road",
+        "Normalized Values": 0.1260057381083406,
+        "Tree Count": 30387
+    },
+    // {
+    //     "Ratio": 27.72247044658831,
+    //     "Total Population": 324751,
+    //     "Required Trees": 162375.5,
+    //     "Wards": "Hadapsar",
+    //     "Normalized Values": 1.735261206892126,
+    //     "Tree Count": 207390
+    // },
+    // {
+    //     "Ratio": -92.93269984984649,
+    //     "Total Population": 178484,
+    //     "Required Trees": 89242.0,
+    //     "Wards": "Kasba Peth",
+    //     "Normalized Values": 0.02767758522115571,
+    //     "Tree Count": 6307
+    // },
+    {
+        "Ratio": 77.0067500752397,
+        "Total Population": 209331,
+        "Required Trees": 104665.5,
+        "Wards": "Kothrud-Bawdhan",
+        "Normalized Values": 2.432761599896205,
+        "Tree Count": 185265
+    },
+    // {
+    //     "Ratio": 8.502197711265035,
+    //     "Total Population": 205441,
+    //     "Required Trees": 102720.5,
+    //     "Wards": "Sahakar Nagar",
+    //     "Normalized Values": 1.4632444930931905,
+    //     "Tree Count": 111454
+    // },
+    // {
+    //     "Ratio": 611.6959016055141,
+    //     "Total Population": 242290,
+    //     "Required Trees": 121145.0,
+    //     "Wards": "Tilak Road",
+    //     "Normalized Values": 10.0,
+    //     "Tree Count": 862184
+    // },
+    {
+        "Ratio": -13.040758529385302,
+        "Total Population": 233399,
+        "Required Trees": 116699.5,
+        "Wards": "Warje-Karvenagar",
+        "Normalized Values": 1.1583557829904298,
+        "Tree Count": 101481
+    }
+    // {
+    //     "Ratio": 59.29688934898398,
+    //     "Total Population": 239564,
+    //     "Required Trees": 119782.0,
+    //     "Wards": "Yerwada",
+    //     "Normalized Values": 2.1821211338148125,
+    //     "Tree Count": 190809
+    // }
+]
 
-                return Math.round(temp)
+           
+               const tree_count_list = []
+    trees.forEach((t)=>{
+        tree_count_list.push(t["Tree Count"])
+    })
+
+    var sum_tot = 0
+    tree_count_list.forEach((e)=>{
+        sum_tot += e
+    })
+    //console.log(sum/4)
+
+    var sum = 0
+    const tree_req_list = []
+    trees.forEach((t)=>{
+        tree_req_list.push(t["Required Trees"])
+    })
+
+    tree_req_list.forEach((e)=>{
+        sum += e
+    })
+    //console.log(sum/4)
+
+    // new_trees = trees
+    // new_trees.forEach((e)=>{
+    //     e["Tree Count"] += x/4 
+    //     //console.log(e)
+    // })
+
+    // min_tree = Math.min(...tree_count_list)
+    // new_trees_without_min=trees.filter((e)=> e["Tree Count"]!=min_tree)
+    // new_trees_withonly_min=trees.filter((e)=> e["Tree Count"]==min_tree)
+
+    // new_trees_withonly_min[0]["Tree Count"] =min_tree + x
+    // new_trees_without_min.push(new_trees_withonly_min[0])
+
+    // new_trees.forEach((e)=>{
+    //     // e['Index'] = (e["Tree Count"]-e["Required Trees"])*100/e["Required Trees"]
+    //     e['Index'] = (e["Tree Count"])*10/e["Required Trees"]
+    // })
+
+   
+    const temp = sum_tot + x
+     return (temp* 10)/sum;
+
+
+
             }
             
             export const hospital_function = (x)=>{
@@ -365,20 +381,29 @@
                         ]};
                         // for(var i in complaint)
                         //     console.log(complaint[2018][0])
-                        
-                        var sum = 0;
-                        var decrease = x
-                        var dec = decrease/complaint[2018].length
-                        for(var i = 0 ; i< complaint[2018].length; i++){
-                            complaint[2018][i]+=dec
-                            complaint['Index'][i] = ((complaint[2018][i]-complaint[2017][i])/complaint[2017][i])*10
-                            sum += complaint['Index'][i]
+                                    var sum2018 = 0
+                        var sum2017 = 0
+                        for(var i in complaint[2018]){
+                            sum2018 += complaint[2018][i]
+                            sum2017 += complaint[2017][i]
                         }
-                
-                        let temp =  sum/complaint[2017].length;
-                        if(temp>10)
-                        temp=10
-                        return Math.round(temp)
+                        //console.log("2018: " + sum2018)
+                        //console.log("2017: " + sum2017)
+                        // if(x < sum2018)
+                        //     sum2018 -= x
+                        // else{
+                        //     sum2018 += x
+                        // }
+
+                        sum2018 = x
+                        //console.log("2018updated: " + sum2018)
+                var avg = ((sum2018-sum2017)/sum2017)*10
+                        if(avg <0)
+                            avg = 0
+                        else if(avg>10)
+                            avg =10
+                        return avg //complaint[2018].length;
+
                 }
 
                 export const aqi_function=(x)=>{
@@ -398,22 +423,22 @@
                            
                         ]
                     }
-                    var len = Full_Aqi['AQI'].length
-                    var sum = 0  
-                    // if(x<0){
-                    //     x = x*len    
-                    // } 
-                    // else{
-                    //     x = x/len
-                    // }
-                    Full_Aqi["AQI"].forEach((e) => {
+                    // var len = Full_Aqi['AQI'].length
+                    // var sum = 0  
+                    // // if(x<0){
+                    // //     x = x*len    
+                    // // } 
+                    // // else{
+                    // //     x = x/len
+                    // // }
+                    // Full_Aqi["AQI"].forEach((e) => {
                     
-                        sum +=  e + x
+                    //     sum +=  e + x
                         
-                    });
+                    // });
                     
-                    var average = sum/len
-                    var norm= (average/500)*10
+                    // var average = sum/len
+                    var norm= (x/500)*10
                     if(norm>=10)
                     {
                         norm = 10

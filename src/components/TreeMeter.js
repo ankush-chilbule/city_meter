@@ -32,8 +32,8 @@ export default ({data,label,mkey,sliderMin,sliderMax,hint})=>{
             <Slider min={sliderMin} max={sliderMax}  value={slider[mkey]}  onChange={value=>seekbarChangeHandler(value,mkey)}/>
                 <article>
                 <h5>{hint}</h5>
-                <p>Current Value {slider[mkey]}</p>
-                <p>Require Value {sliderMax}</p>
+                <p>Current Value {slider[mkey]+322064}</p>
+                <p>Require Value {sliderMax+322064}</p>
                 </article>
             </div>
             <input type="hidden" value={mkey} onClick={clickHandler}/>

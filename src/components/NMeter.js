@@ -21,7 +21,7 @@ export default ({data,label,mkey,sliderMin,sliderMax,hint})=>{
                     maxValue={10}
                     customSegmentStops={[0, 3, 7,  10]}
                     segmentColors={["#1d9421", "gold", "#DF2727"]}
-                    value={Math.round(data)}
+                    value={data.toFixed(2)}
                     needleColor={"#242325"}
                     needleHeightRatio={0.8}
             />

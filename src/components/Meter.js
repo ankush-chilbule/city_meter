@@ -5,7 +5,7 @@ import Slider, { Range } from 'rc-slider';
 
 import 'rc-slider/assets/index.css';
   
-export default ({data,label,mkey})=>{
+export default ({data,label,mkey,desc})=>{
 
     const {clickHandler} = useContext(Context)
     return(
@@ -13,6 +13,7 @@ export default ({data,label,mkey})=>{
             <h3>
                 {label}
             </h3>
+  
             <ReactSpeedometer
                     width={250}
                     height={200}
@@ -20,7 +21,7 @@ export default ({data,label,mkey})=>{
                     maxValue={10}
                     customSegmentStops={[0, 3, 7,  10]}
                     segmentColors={["#DF2727", "gold", "#1d9421"]}
-                    value={Math.round(data)}
+                    value={data.toFixed(2)}
                     needleColor={"#242325"}
                     needleHeightRatio={0.8}
             />

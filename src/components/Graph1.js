@@ -6,15 +6,15 @@ export default ()=>{
     const {rd,current} = useContext(Context)
     const {meter,graph} = rd
     const myGraph = graph[current]
-    const {data,Name,Description} = meter[current]
+    const {data,name,description} = meter[current]
     return(
         <div className="graph_wrapper">
             <header>
                 <h2>
-                   Showing Graphs For {Name}
+                   Analysis For {name}
                 </h2>
                 <p>
-               {Description}
+               {description}
                 </p>
             </header>
             {
@@ -34,7 +34,7 @@ export default ()=>{
                                 <Bar
                                     
                                     data={{
-                                        labels: ['Aundh-Baner','Kothrud-Bawdhan','Tilak Road','Warje-Karvenagar'],
+                                        labels: ['Aundh-Baner','Kothrud-Bawdhan','Ghole Road','Warje-Karvenagar'],
                                         datasets:myGraph[e].data}}
                                     width={200}
                                     height={200}
@@ -51,7 +51,7 @@ export default ()=>{
                                     />
                                 </div>
                                 <div>
-                                { myGraph[e].Description}
+                                { myGraph[e].description}
                                 </div>
                             </div>
 
